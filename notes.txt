@@ -1,0 +1,132 @@
+My plan is that matrix.c will take a filepointer as input. 
+
+I will make an attempt to test things. My attempt is to just write out the thing. 
+
+It is entirely unclear to me what is wrong. Somehow I ended up with a char with a negative value. 
+
+I really dont understand why I wouldn't immediately to fp=ri.fp.
+I could do this before I deal with information. 
+
+I just made some adaptations to the code. 
+It should now run a lot better. I will test it. 
+
+I think the code went a lot further just now but what do I even know? 
+For some reason it parsed 1. 
+
+I could take away the printing but instead I will make it a mode. 
+
+Now several places in my code will be pissy. 
+It will only be in two places so I can fix it. 
+
+Now I'm really confused because it seems like it doesnt use my thing at all. 
+Let me first see if it is used at all. 
+
+So what happens in the code is that I have the linkedlist and then I take things out of it. 
+I take it out with getIntsOut. 
+
+What I do not know right now is if my code works with numbers with several integers. This should be tested. 
+I wish I could do it in the typical way but I guess that I will do it the dumb way. 
+The thing I work on now is that I have to deal with all the rows. 
+
+I could do one of two things. 
+1: Build an abstraction. 
+2: Just implement the same thing. 
+
+I only need to implement the linkedlistagain. 
+
+
+What to do right now:
+I want to be able to build my thing. Then I get the thing. 
+
+There are many things that I have not resolved in this program. 
+It doesnt do deallocing properly. 
+
+Most of the issues that I have tried to resolve have now been improved. 
+Now I am working on the actual issues. This should be easy. 
+There may be complications because I just copied it over but I'm hoping it isn't. 
+
+Now I am doing really cursed shit. It is not great. 
+
+I made my new system and I have no idea if it is working. 
+
+The new goal is to send in the end of the thing. 
+It should be malloc-ed. I should have a pointer to it. 
+
+I need to think a little bit about the access pattern. 
+We have an array of pointers. 
+This is a void**, which points to a list of pointers.
+Iy may be an int**. For some reason, I assume this is the case. 
+We go to the value. 
+Then we dereference it. 
+
+What it has to be:
+
+void printmatrix(matrix_t m){
+    void* p=m.p;
+    for(int i=0;i<m.height;i++){
+        int* bp=*(mp[i])
+        for(int j=0;j<m.len;j++){
+            printf("%d ",bp[j]);
+        }
+        printf("\n");
+    }
+}
+
+I just threw out some code and did some adding comments. We will see how this actually works out. 
+
+My issue right now is that I am stuck with some shit that I dont understand. The thing I need to do now is actually 
+re-write the code and see if it gets better then. 
+
+row_info_t ri;
+
+Right now I write some code to get the basePointer that I know. This should all work very well but I dont know. 
+If it doesn't I am a little bit unsure about how things work...
+I really dont want to start re-writing code even though it is probably faster. 
+
+
+It worked as I wanted and I have tested exactly the same thing before. 
+The thing I will do now:
+In my test code, I think I have an array of pointers. This one I iterated through. 
+Now I want to know that these are the same. 
+The first thing I need to know is that the value returned by getPointersOut is gotten by a malloc. 
+This it is. 
+Now I need to know that it has a few values that I want. 
+How did I get these out in my test code. 
+
+I will print result[i] for i in m.length. 
+The other thing I will do is to get the 
+
+Twice I got a pointer:
+1: 0x560410699920
+2: 0x560410699960
+Then the pointers that I actually wanted werent there. 
+
+My problem right now is that I should be getting the values out there. 
+
+Right now I am doing something that I do not think will work. 
+I am reminded of the people who dont want you to build complexity over a certain level ever. 
+It just gets harder to work with things. 
+
+Plan:
+1. Make it compile to num_t's instead of just ints. 
+2. Make it so that it writes it out properly. 
+3. Deal with errors. 
+3.5: Make set's and get's. 
+4. Make actual matrix calculations. 
+
+This is a lot of work but luckily work is easy. 
+
+To do the first thing, I need to do stuff. 
+One of the things I need to do is build a lot of functions and use these instead. They will be higher up in the function. 
+My idea right now is that, based on the current state, we make some decisions. 
+I also want to make a function that passes in a function to the current state.  
+The reason I want a function that passes in a pointer to the current state is because the state will be changed like that. 
+
+Something else that needs to happen is that I build a linkedlist for num_t's, which isn't the same as int. 
+This is probably quite easy to do. 
+I will just build this one in a short time. 
+The question for me is the way I should do it. I could try to do it amazingly if I wished to or I may not. 
+I am often very paranoid about just writing shitty code. Speed vs quality is a consideration. What I could do now is simply copy the whole function. 
+
+There are several changes that have to be made. A lot of the first ones I can make on the main function. 
+
